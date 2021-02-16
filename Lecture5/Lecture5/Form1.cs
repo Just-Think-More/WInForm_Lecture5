@@ -22,5 +22,11 @@ namespace Lecture5
             SearchForm searchForm = new SearchForm(this);
             searchForm.Show();
         }
+
+        public void FilesList(IEnumerable<string> list)
+        {
+            listBox1.DataSource = null;
+            listBox1.DataSource = list;
+        }
     }
 }

@@ -57,6 +57,7 @@ namespace Lecture5
             this.@select.TabIndex = 1;
             this.@select.Text = "Выбрать";
             this.@select.UseVisualStyleBackColor = true;
+            this.@select.Click += new System.EventHandler(this.select_Click);
             // 
             // pathLabel
             // 
@@ -102,6 +103,7 @@ namespace Lecture5
             this.Controls.Add(this.@select);
             this.Controls.Add(this.listBox1);
             this.Name = "SearchForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SearchForm";
             this.ResumeLayout(false);
             this.PerformLayout();

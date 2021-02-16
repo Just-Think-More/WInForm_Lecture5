@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Lecture5
@@ -51,6 +52,24 @@ namespace Lecture5
                 _path = Directory.GetParent(_path)?.ToString();
                 FolderList(_path);
             }
+        }
+
+        private void select_Click(object sender, EventArgs e)
+        {
+            _path = listBox1.SelectedItem.ToString();
+            _parent.FilesList(SearchFiles(_path));
+        }
+
+        private List<string> SearchFiles(string path)
+        {
+            var list = new List<string>();
+            var files = Directory.EnumerateFiles(path, mask.Text, new EnumerationOptions());
+            list.AddRange(files);
+            foreach (var dir in Directory.GetDirectories(path, "*", new EnumerationOptions()))
+            {
+                list.AddRange(SearchFiles(dir));
+            }
+            return list;
         }
     }
 }
