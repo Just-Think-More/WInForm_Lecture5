@@ -16,5 +16,11 @@ namespace Lecture5
         {
             InitializeComponent();
         }
+
+        private void search_Click(object sender, EventArgs e)
+        {
+            SearchForm searchForm = new SearchForm(this);
+            searchForm.Show();
+        }
     }
 }
