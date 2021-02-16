@@ -9,14 +9,11 @@ namespace Lecture5
     {
         private Form1 _parent;
         private string _path;
-        private Stack<string> _listPath;
         public SearchForm(Form1 parent)
         {
             InitializeComponent();
-            _listPath = new Stack<string>();
-            _listPath.Push(_path);
+            _path = Directory.GetDirectoryRoot(Directory.GetCurrentDirectory());
             _parent = parent;
-            _path = @"C:\";
             FolderList(_path);
             
         }
@@ -29,13 +26,31 @@ namespace Lecture5
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            pathLabel.Text = listBox1?.SelectedItem.ToString();
+            pathLabel.Text = listBox1.SelectedItem?.ToString();
         }
 
         private void listBox1_DoubleClick(object sender, EventArgs e)
         {
-            _listPath.Push(listBox1.SelectedItem.ToString());
-            FolderList(_listPath.Peek());
+            try
+            {
+                _path = listBox1.SelectedItem.ToString();
+                FolderList(_path);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _path = Directory.GetParent(_path)?.ToString();
+                FolderList(_path);
+            }
+        }
+
+        private void upLabel_Click(object sender, EventArgs e)
+        {
+            if(Directory.GetParent(_path) != null)
+            {
+                _path = Directory.GetParent(_path)?.ToString();
+                FolderList(_path);
+            }
         }
     }
 }
