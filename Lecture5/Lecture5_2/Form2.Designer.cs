@@ -96,6 +96,7 @@ namespace Lecture5_2
             this.editSpecificationsTextBox.Location = new System.Drawing.Point(95, 213);
             this.editSpecificationsTextBox.Multiline = true;
             this.editSpecificationsTextBox.Name = "editSpecificationsTextBox";
+            this.editSpecificationsTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.editSpecificationsTextBox.Size = new System.Drawing.Size(186, 89);
             this.editSpecificationsTextBox.TabIndex = 11;
             // 
@@ -104,6 +105,7 @@ namespace Lecture5_2
             this.editDescriptionTextBox.Location = new System.Drawing.Point(95, 117);
             this.editDescriptionTextBox.Multiline = true;
             this.editDescriptionTextBox.Name = "editDescriptionTextBox";
+            this.editDescriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.editDescriptionTextBox.Size = new System.Drawing.Size(186, 90);
             this.editDescriptionTextBox.TabIndex = 10;
             // 
@@ -212,6 +214,7 @@ namespace Lecture5_2
             this.addSpecificationsTextBox.Location = new System.Drawing.Point(89, 213);
             this.addSpecificationsTextBox.Multiline = true;
             this.addSpecificationsTextBox.Name = "addSpecificationsTextBox";
+            this.addSpecificationsTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.addSpecificationsTextBox.Size = new System.Drawing.Size(186, 89);
             this.addSpecificationsTextBox.TabIndex = 21;
             // 
@@ -220,6 +223,7 @@ namespace Lecture5_2
             this.addDescriptionTextBox.Location = new System.Drawing.Point(89, 117);
             this.addDescriptionTextBox.Multiline = true;
             this.addDescriptionTextBox.Name = "addDescriptionTextBox";
+            this.addDescriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.addDescriptionTextBox.Size = new System.Drawing.Size(186, 90);
             this.addDescriptionTextBox.TabIndex = 20;
             // 
