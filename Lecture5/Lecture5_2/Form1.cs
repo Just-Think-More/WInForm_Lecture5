@@ -22,13 +22,7 @@ namespace Lecture5_2
             comboBox1.DataSource = _goods;
 
         }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Goods goods = listBox1.SelectedItem as Goods;
-            currentTextBox.Text = goods?.Price.ToString();
-        }
-
+        
         private void selectButton_Click(object sender, EventArgs e)
         {
             var goods = comboBox1.SelectedItem as Goods;
@@ -36,7 +30,13 @@ namespace Lecture5_2
             listBox1.DataSource = null;
             listBox1.DataSource = _listBox;
             var totalCurrent = _listBox.Sum(x => x.Price);
-            totalTextBox.Text = $@"{totalCurrent :#.## '$'}";
+            totalTextBox.Text = $@"{totalCurrent :0.00 '$'}";
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var goods = comboBox1.SelectedItem as Goods;
+            currentTextBox.Text = $@"{goods?.Price :0.00 '$'}";
         }
     }
 }
